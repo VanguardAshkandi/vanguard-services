@@ -39,9 +39,9 @@ spec:
               name: vanguard-psql
               key: password
         - name: TYPEORM_HOST
-          value: 10.18.112.3
+          value: '10.18.112.3'
         - name: TYPEORM_PORT
-          value: 5432
+          value: '5432'
         - name: TYPEORM_DATABASE
           value: vanguard_test
         - name: TYPEORM_SYNCHRONIZE
