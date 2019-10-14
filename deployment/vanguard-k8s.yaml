@@ -45,9 +45,9 @@ spec:
         - name: TYPEORM_DATABASE
           value: vanguard_test
         - name: TYPEORM_SYNCHRONIZE
-          value: false
+          value: 'false'
         - name: TYPEORM_LOGGING
-          value: true
+          value: 'true'
         - name: TYPEORM_ENTITIES
           value: '/app/entities/*.js'
         - name: TYPEORM_MIGRATIONS
