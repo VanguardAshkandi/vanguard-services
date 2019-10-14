@@ -17,7 +17,7 @@ FROM node:current-alpine
 WORKDIR /app
 
 COPY --from=0 /build/build .
-COPY --from=0 /build/static .
+COPY --from=0 /build/static ./static
 COPY --from=0 /build/swagger.json ./swagger.json
 COPY package*.json ./
 
