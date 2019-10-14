@@ -6,6 +6,8 @@ steps:
   - 'build'
   - '-t'
   - 'gcr.io/$PROJECT_ID/vanguard-services:$SHORT_SHA'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/vanguard-services:master'
   - '.'
 
 - name: 'gcr.io/cloud-builders/docker'
@@ -14,4 +16,18 @@ steps:
   - 'push'
   - 'gcr.io/$PROJECT_ID/vanguard-services:$SHORT_SHA'
 
-tags: ['master']
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push
+  args:
+  - 'push'
+  - 'gcr.io/$PROJECT_ID/vanguard-services:master'
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Deploy
+  args:
+  - 'apply'
+  - '-f'
+  - 'deployment/vanguard-k8s.yaml'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=vanguard'

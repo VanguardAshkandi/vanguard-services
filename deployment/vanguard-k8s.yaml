@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: vanguard-services
-        image: nginx
+        image: gcr.io/vanguard-255823/vanguard-services:master
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
