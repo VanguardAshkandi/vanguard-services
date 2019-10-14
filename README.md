@@ -1,9 +1,9 @@
 # vanguard-services
 Raid import/export, storage, and whatever else we need
 
-Home: http://34.102.179.198/
-API Docs: http://34.102.179.198/docs
-Upload: http://34.102.179.198/upload.html
+Home: http://34.102.179.198/  
+API Docs: http://34.102.179.198/docs  
+Upload: http://34.102.179.198/upload.html  
 
 ## Infrastructure
 
