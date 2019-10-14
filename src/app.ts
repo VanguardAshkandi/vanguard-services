@@ -19,7 +19,7 @@ app.get('/__health', (req: Request, res: Response) => {
 
 // API docs
 try {
-  app.use('/docs', swaggerUI.serve, swaggerUI.setup(require('../swagger.json')));
+  app.use('/docs', swaggerUI.serve, swaggerUI.setup(require('./swagger.json')));
 } catch(e) {
   console.error('Failed to create API docs route');
 }
