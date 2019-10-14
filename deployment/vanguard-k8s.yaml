@@ -25,6 +25,33 @@ spec:
           httpGet:
             path: /__health
             port: 3000
+        env:
+        - name: TYPEORM_CONNECTION
+          value: postgres
+        - name: TYPEORM_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: vanguard-psql
+              key: username
+        - name: TYPEORM_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: vanguard-psql
+              key: password
+        - name: TYPEORM_HOST
+          value: 10.18.112.3
+        - name: TYPEORM_PORT
+          value: 5432
+        - name: TYPEORM_DATABASE
+          value: vanguard_test
+        - name: TYPEORM_SYNCHRONIZE
+          value: false
+        - name: TYPEORM_LOGGING
+          value: true
+        - name: TYPEORM_ENTITIES
+          value: '/app/entities/*.js'
+        - name: TYPEORM_MIGRATIONS
+          value: '/app/migrations/*.js'
 ---
 apiVersion: v1
 kind: Service
