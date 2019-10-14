@@ -11,13 +11,13 @@ steps:
   - '.'
 
 - name: 'gcr.io/cloud-builders/docker'
-  id: Push
+  id: PushSha
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/vanguard-services:$SHORT_SHA'
 
 - name: 'gcr.io/cloud-builders/docker'
-  id: Push
+  id: PushMaster
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/vanguard-services:master'
